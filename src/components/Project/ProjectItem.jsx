@@ -1,11 +1,44 @@
 import React from "react";
+import { motion, useViewportScroll } from "framer-motion";
 
 const ProjectItem = (props) => {
   const { img, title, desc, date, listTechIcon , link} = props;
-
+  const imgVariants = {
+  offscreen: {
+    y: 300,
+   
+  },
+  onscreen: {
+    y: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1
+    }
+  }
+};
+  const textContainerVariants = {
+  offscreen: {
+    x: 1000,
+  },
+  onscreen: {
+    x: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.2,
+      duration: 1
+    }
+  }
+};
   return (
-    <div className="flex container mx-auto max-w-[1000px] py-2 mt-10 text-white h-[220px]">
-      <div className="w-[350px] h-full group relative">
+
+   
+    <motion.div
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+     className="flex container mx-auto max-w-[1000px] py-2 mt-10 text-white h-[220px]">
+      <motion.div variants={imgVariants} className="w-[350px] h-full group relative">
         <img
           src={img}
           alt="img logo"
@@ -16,8 +49,8 @@ const ProjectItem = (props) => {
             View
           </a>
         </div>
-      </div>
-      <div className="flex-1 ml-10">
+      </motion.div>
+      <motion.div variants={textContainerVariants} className="flex-1 ml-10">
         <h2 className="font-bold text-xl">{title}</h2>
         <span className="block font-medium text-sm mb-2 text-gray-300">{date}</span>
         <p className="leading-7 max-w-[600px]">{desc}</p>
@@ -32,8 +65,8 @@ const ProjectItem = (props) => {
             </div>
           ))}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

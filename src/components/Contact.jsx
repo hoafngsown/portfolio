@@ -1,10 +1,29 @@
 import React from "react";
 import InputField from "./InputField";
 import TextareaField from "./TextareaField";
-
+import { motion } from "framer-motion";
 const Contact = () => {
+
+  const inputVariants = {
+    offscreen: {
+      x: -1500,
+      rotate: 15
+    },
+    onscreen: {
+      x: 0,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        bounce: 0.2,
+        duration: 1.5
+      }
+    }
+  };
+
   return (
-    <div className="text-white container mx-auto px-8 w-screen h-screen bg-black absolute z-10 mt-[300vh]">
+    <motion.div initial="offscreen"
+    whileInView="onscreen"
+    viewport={{ once: true, amount: 0.8 }} className="text-white container mx-auto px-8 w-screen h-screen bg-black absolute z-10 mt-[300vh]">
       <div className="flex items-center justify-center pt-10">
         <h1 className='mt-5 text-[46px] font-bold text-center relative before:content-[""] before:absolute before:bg-red-400 before:w-full before:h-1 before:bottom-0 before:left-0'>
           Contact
@@ -33,16 +52,16 @@ const Contact = () => {
         </div>
         <div className="px-2">
           <div className="w-full p-4 flex items-center justify-between">
-            <div className="mx-2 w-[50%-4px]">
+            <motion.div className="mx-2 w-[50%-4px]" variants={inputVariants}>
               <InputField placeholder="Name" />
-            </div>
-            <div className="mx-2 w-[50%-4px]">
+            </motion.div>
+            <motion.div className="mx-2 w-[50%-4px]" variants={inputVariants}>
               <InputField placeholder="Email" />
-            </div>
+            </motion.div>
           </div>
-          <div className="mt-10 w-full px-8">
+          <motion.div variants={inputVariants} className="mt-10 w-full px-8">
             <TextareaField placeholder="Enter message here!" />
-          </div>
+          </motion.div>
           <div class="w-full px-8 mt-10">
             <button
               type="button"
@@ -55,7 +74,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

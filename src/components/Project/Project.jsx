@@ -1,19 +1,22 @@
+import { type } from "@testing-library/user-event/dist/type";
+import { motion } from "framer-motion";
 import React from 'react';
-import mernstackImg from '../../assets/mernstack.png';
-import ecommerce from '../../assets/ecommerce.png';
-import nextflix from '../../assets/nextflix.png';
-import vpn from '../../assets/vpn.png';
 import bussiness from '../../assets/bussiness.png';
-import jsLogo from '../../assets/js.png';
-import reactLogo from '../../assets/react.png';
-import nextjsLogo from '../../assets/nextjs.png';
-import htmlLogo from '../../assets/html.png';
 import cssLogo from '../../assets/css.png';
-import sassLogo from '../../assets/sass.png';
-import muiLogo from '../../assets/MUI.png';
-import mongoLogo from '../../assets/mongo.png';
+import ecommerce from '../../assets/ecommerce.png';
 import expressLogo from '../../assets/expressjs.png';
+import htmlLogo from '../../assets/html.png';
+import jsLogo from '../../assets/js.png';
+import mernstackImg from '../../assets/mernstack.png';
+import mongoLogo from '../../assets/mongo.png';
+import muiLogo from '../../assets/MUI.png';
+import nextflix from '../../assets/nextflix.png';
+import nextjsLogo from '../../assets/nextjs.png';
+import reactLogo from '../../assets/react.png';
+import sassLogo from '../../assets/sass.png';
+import vpn from '../../assets/vpn.png';
 import ProjectItem from './ProjectItem';
+
 
 const listCard = [
     {

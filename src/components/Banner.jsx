@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiFillFacebook , AiFillGithub   , AiFillInstagram} from "react-icons/ai";
 import Avatar from '../assets/avatar.jpg'
-
+import { motion } from 'framer-motion';
 
 
 
@@ -24,15 +24,47 @@ const Banner = () => {
         </ul>
        )
    }
+   const nameVariants = {
+  offscreen: {
+    x: 1500,
+    rotate: 15,
+  },
+  onscreen: {
+    x: 0,
+    rotate: 0, 
+    transition: {
+      type: "tween",
+      bounce: 0.4,
+      duration: 1
+    }
+  }
+};  
+const descVariants = {
+  offscreen: {
+    x: -1500,
+    rotate: -15,
+  },
+  onscreen: {
+    x: 0,
+    rotate: 0, 
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 2
+    }
+  }
+};
     
     return (
-        <div className='w-screen h-[100vh] absolute z-10 bg-transparent text-white'>
-            <div className='flex items-center justify-center m-8 p-4'>
+        <motion.div initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }} className='w-screen h-[100vh] absolute z-10 bg-transparent text-white'>
+            <motion.div variants={nameVariants} className='flex items-center justify-center m-8 p-4'>
                 <span className='text-white text-6xl font-bold inline-block'>Hi , I'm Sown</span>
                 <div className='w-14 h-14 ml-6'>
                     <img src={Avatar} alt="avatar" className='w-full h-full object-cover rounded-[50%]'/>
                 </div>
-            </div>
+            </motion.div>
             {/* <span className='inline-block text-red-300 ml-2'>Son</span> */}
             <div className='flex items-center justify-center text-4xl font-bold bg-black'>
                 <div className='static-txt'>I'm</div>
@@ -41,15 +73,15 @@ const Banner = () => {
                 </div>
             </div>
             <div className='flex items-center justify-center mt-20'>
-            <p className='max-w-[700px] text-center font-medium text-lg  leading-9'>
+            <motion.p  variants={descVariants} className='max-w-[700px] text-center font-medium text-lg  leading-9'>
                I'm currently 2nd student at University of Science and Technology - The University of Da Nang.
                I'm a friendly , cutie guy who love to learn new Stuff and Technology , especially about Frontend.
-            </p>
+            </motion.p>
             </div>
             <div className='flex items-center justify-center mt-10'>
                 {renderListIcon()}
             </div>
-        </div>
+        </motion.div>
     );
 };
 
