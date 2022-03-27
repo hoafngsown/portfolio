@@ -67,7 +67,7 @@ const Contact = () => {
               type="button"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
-              class="block w-full py-3 bg-red-400 text-white text-md font-bold leading-tight uppercase rounded shadow-md hover:bg-red-600 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-700 active:shadow-lg transition duration-200 ease-in-out"
+              class="block w-full py-3 bg-red-400 text-white text-md font-bold leading-tight uppercase rounded shadow-md hover:bg-red-600 hover:shadow-lg focus:bg-red-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-700 active:shadow-lg transition duration-200 ease-in-out"
             >
               Submit 
             </button>
