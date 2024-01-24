@@ -60,7 +60,7 @@ const descVariants = {
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }} className='w-screen h-[100vh] absolute z-10 bg-transparent text-white'>
             <motion.div variants={nameVariants} className='flex items-center justify-center m-8 p-4'>
-                <span className='text-white text-6xl font-bold inline-block'>Hi , I'm Hoafng Xown</span>
+                <span className='text-white text-6xl font-bold inline-block'>Hi , I'm Xown</span>
                 <div className='w-14 h-14 ml-6'>
                     <img src={Avatar} alt="avatar" className='w-full h-full object-cover rounded-[50%]'/>
                 </div>
