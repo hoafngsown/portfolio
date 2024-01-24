@@ -9,7 +9,7 @@ echo $SERVER_USER@$SERVER_URL
 chmod 400 $SERVER_SSH_KEY_FILE
 
 ssh -o StrictHostKeyChecking=no -i $SERVER_SSH_KEY_FILE $SERVER_USER@$SERVER_URL "
-  docker stop portfolio-container
+  docker rm -f portfolio-container
   docker pull hoafngxown/portfolio:latest
   docker run -p 3000:3000 -d --name portfolio-container hoafngxown/portfolio:latest
 "
