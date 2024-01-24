@@ -10,7 +10,7 @@ chmod 400 $SERVER_SSH_KEY_FILE
 
 ssh -o StrictHostKeyChecking=no -i $SERVER_SSH_KEY_FILE $SERVER_USER@$SERVER_URL "
   docker pull hoafngxown/portfolio:latest
-  docker -p 3000:3000 -d hoafngxown/portfolio:latest
+  docker run -p 3000:3000 -d hoafngxown/portfolio:latest
 "
 
 OUT=$?
