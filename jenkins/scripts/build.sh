@@ -5,7 +5,7 @@ export PATH="/usr/local/bin:$PATH"
 
 docker ps -a
 
-docker build -t portfolio:latest 
+docker build -t portfolio:latest .
 
 docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
 
