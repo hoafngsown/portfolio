@@ -3,9 +3,7 @@ echo "Jenkins Build Stage Using Docker"
 
 export PATH="/usr/local/bin:$PATH"
 
-docker ps -
-
-cat $ENV_FILE
+docker ps -a
 
 docker build -t portfolio:latest 
 
