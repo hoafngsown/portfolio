@@ -13,7 +13,7 @@ ssh -o StrictHostKeyChecking=no -i $SERVER_SSH_KEY_FILE $SERVER_USER@$SERVER_URL
   docker -p 3000:3000 -d hoafngxown/portfolio:latest
 "
 
-OUT=$?Ø
+OUT=$?
 
 if [ $OUT -eq 0 ]
 then
